@@ -1,0 +1,26 @@
+#!/bin/sh
+#by codedwrench
+
+INTERFACE="${1:-wlan0}"
+
+state="$(cat /sys/class/net/$INTERFACE/operstate)"
+if [ "$state" != "up" ]; then
+	echo "$LABEL: down"
+	echo "$LABEL: down"
+	echo "#FF0000"
+	exit 0
+fi
+strength=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+connection="$(/sbin/iwconfig $INTERFACE | awk -F '"' '/ESSID/ {print $2}')"
+echo " $connection"
+echo ""
+
+if [[ "$strength" > 50 ]]; then
+	echo  \#aced6b
+
+elif [[ "$strength" > 30 ]]; then
+	echo  \#edb76b
+
+else
+	echo  \#ed6b6b
+fi
