@@ -1,0 +1,15 @@
+#!/bin/bash
+# CodedWrench
+# based on dzen2 pop-up calendar
+# (c) 2007, by Robert Manea
+#
+OUTPUT=`gcalcli agenda --detail_location --nocolor |  sed -e 's/^[ \t]*//'`
+LINES=$(gcalcli agenda --detail_location | wc -l)
+LINES=$((LINES-1))
+BG='#2E3030'
+FONT='xft:Hack:size=10'
+(
+
+# current month, highlight header and today
+echo -en "\n $OUTPUT" | dzen2 -bg $BG -x 1513 -y 1055 -w 400 -h 16 -l $LINES -sa c -p -e 'onstart=uncollapse,hide;button3=exit;' -fn $FONT -tw 0
+)

@@ -3,7 +3,8 @@ URxvt.scrollBar: none
 URxvt.internalBorder: 6
 
 !font settings
-URxvt.font: xft:Hack:size=9
+URxvt*.font: xft:Hack:size=9
+
 
 ! special
 URxvt.foreground:   #ffffff

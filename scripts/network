@@ -3,11 +3,16 @@
 
 INTERFACE="${1:-wlan0}"
 
+case $BLOCK_BUTTON in
+  1) termite -e "nmtui" ;; #left click, start nmtui
+esac
+
+
 state="$(cat /sys/class/net/$INTERFACE/operstate)"
 if [ "$state" != "up" ]; then
-	echo "$LABEL: down"
-	echo "$LABEL: down"
-	echo "#FF0000"
+	echo " down"
+	echo " down"
+	echo "#ed6b6b"
 	exit 0
 fi
 strength=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')

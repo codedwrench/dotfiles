@@ -40,7 +40,7 @@ $UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
 END {
 	if (state == "charging")
 		label = ""
-	else if (state == "fully-charged")
+	else if (percentage == "100%")
 		label = ""
 	else if (percentage > 75)
 		label = ""
@@ -52,8 +52,7 @@ END {
 		label = ""
 
 	# full text
-	print label " " percentage \
-		(state == "fully-charged" ? "" : " " remaining_time)
+	print label " " percentage
 
 	# short text
 	print label " " percentage
@@ -61,6 +60,6 @@ END {
 	# color
 	gsub(/%$/,"",percentage)
 	if (+ percentage < + alert_low)
-		print "#FF0000"
+		print "#ed6b6b"
 }
 '
