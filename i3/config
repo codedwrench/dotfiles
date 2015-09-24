@@ -40,7 +40,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 # start chromium
-bindsym $mod+c exec chromium
+bindsym $mod+c exec firefox-bin
 
 #start pcmanfm
 bindsym $mod+e exec pcmanfm
@@ -130,6 +130,12 @@ bindsym $mod+Shift+8 move container to workspace  8
 bindsym $mod+Shift+9 move container to workspace  9
 bindsym $mod+Shift+0 move container to workspace 10
 
+#multi monitor
+bindsym $mod+bracketright move container to output right
+bindsym $mod+bracketleft move container to output left
+bindsym $mod+Shift+bracketleft move workspace to output left
+bindsym $mod+Shift+bracketright move workspace to output left
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -145,10 +151,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -191,7 +197,6 @@ bar {
 
 # windows rules
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Chromium-browser"] move container to workspace  2
 for_window [class="Skype"] move container to workspace  6
 
 
@@ -199,6 +204,6 @@ for_window [class="Skype"] move container to workspace  6
 # Autostart programs
 exec --no-startup-id compton 
 exec --no-startup-id nitrogen --restore 
-exec --no-startup-id chromium 
-exec --no-startup-id i3-msg 'workspace  1; exec termite'
+exec --no-startup-id firefox-bin
+exec --no-startup-id i3-msg 'workspace  1; exec --no-startup-id termite'
 exec --no-startup-id killall -USR1 i3blocks
