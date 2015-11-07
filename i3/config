@@ -27,9 +27,10 @@ font pango:Liberation Sans, FontAwesome 9
 # font, it doesn’t scale on retina/hidpi displays.
 
 #gap sizes
-for_window [class="^.*"] border pixel 0
+for_window [class="\w*"] border pixel 0
+# for_window [class="^.*"] border pixel 0
 gaps inner 10
-
+# new_window pixel
 #sticky windows
 bindsym $mod+Shift+s sticky toggle
 
@@ -40,7 +41,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 # start chromium
-bindsym $mod+c exec firefox-bin
+bindsym $mod+c exec firefox
 
 #start pcmanfm
 bindsym $mod+e exec pcmanfm
@@ -107,28 +108,28 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace  1
-bindsym $mod+2 workspace  2
-bindsym $mod+3 workspace  3
-bindsym $mod+4 workspace  4
-bindsym $mod+5 workspace  5
-bindsym $mod+6 workspace  6
-bindsym $mod+7 workspace  7
-bindsym $mod+8 workspace  8
-bindsym $mod+9 workspace  9
-bindsym $mod+0 workspace 0 
+bindsym $mod+1 workspace 1:
+bindsym $mod+2 workspace 2:
+bindsym $mod+3 workspace 3:
+bindsym $mod+4 workspace 4:
+bindsym $mod+5 workspace 5:
+bindsym $mod+6 workspace 6:
+bindsym $mod+7 workspace 7:
+bindsym $mod+8 workspace 8:
+bindsym $mod+9 workspace 9:
+bindsym $mod+0 workspace 0:0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace  1
-bindsym $mod+Shift+2 move container to workspace  2
-bindsym $mod+Shift+3 move container to workspace  3
-bindsym $mod+Shift+4 move container to workspace  4
-bindsym $mod+Shift+5 move container to workspace  5
-bindsym $mod+Shift+6 move container to workspace  6
-bindsym $mod+Shift+7 move container to workspace  7
-bindsym $mod+Shift+8 move container to workspace  8
-bindsym $mod+Shift+9 move container to workspace  9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1:
+bindsym $mod+Shift+2 move container to workspace 2:
+bindsym $mod+Shift+3 move container to workspace 3:
+bindsym $mod+Shift+4 move container to workspace 4:
+bindsym $mod+Shift+5 move container to workspace 5:
+bindsym $mod+Shift+6 move container to workspace 6:
+bindsym $mod+Shift+7 move container to workspace 7:
+bindsym $mod+Shift+8 move container to workspace 8:
+bindsym $mod+Shift+9 move container to workspace 9:
+bindsym $mod+Shift+0 move container to workspace 10:0
 
 #multi monitor
 bindsym $mod+bracketright move container to output right
@@ -176,13 +177,14 @@ bindsym XF86AudioMute exec /home/codedwrench/.scripts/mutetoggle
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down && killall -USR1 i3blocks
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up && killall -USR1 i3blocks
 bindsym XF86Calculator exec galculator &
-
+bindsym XF86TouchpadToggle exec /home/codedwrench/.scripts/touchpadtoggle.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3blocks
         tray_output eDP1
+		strip_workspace_numbers yes
 		colors {
 			background #2E3030
 			statusline #ffffff
@@ -197,13 +199,13 @@ bar {
 
 # windows rules
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Skype"] move container to workspace  6
+for_window [class="Skype"] move container to workspace 6:
 
 
 
 # Autostart programs
 exec --no-startup-id compton 
 exec --no-startup-id nitrogen --restore 
-exec --no-startup-id firefox-bin
-exec --no-startup-id i3-msg 'workspace  1; exec --no-startup-id termite'
+exec --no-startup-id firefox
+exec --no-startup-id i3-msg 'workspace 1:; exec --no-startup-id termite'
 exec --no-startup-id killall -USR1 i3blocks

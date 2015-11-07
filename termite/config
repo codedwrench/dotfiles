@@ -21,7 +21,7 @@ cursor_blink = off
    
     
 # $BROWSER is used by default
-browser = chromium
+browser = firefox
      
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)
@@ -37,24 +37,39 @@ cursor = #999999
 # if unset, will reverse foreground and background
 #highlight = #2f2f2f
 
-# colors from color0 to color254 can be set
-color0 = #131313
-color1 = #c44949
-color2 = #76c449
-color3 = #c49749
-color4 = #4976c4
-color5 = #c449c4
-color6 = #49bac4
-color7 = #cfcfcf
-color8 = #4b4b4b
-color9 = #ed6b6b
-color10 = #aced6b
-color11 = #edb76b
-color12 = #6ba1ed
-color13 = #ed6bed
-color14 = #6be2ed
+# black
+color0  = #131313
+color8  = #4b4b4b
+
+# red
+color1  = #c1635e
+color9  = #f7726e
+
+# green
+color2  = #82b35f
+color10 = #9fda74
+
+# yellow
+color3  = #b78d56
+color11 = #ffc070
+
+# blue
+color4  = #5b81ac
+color12 = #6a9ecf
+
+# magenta
+color5  = #c042c0
+color13 = #e74fe7
+
+# cyan
+color6  = #498b97
+color14 = #5aadb9
+
+# white
+color7  = #cfcfcf
 color15 = #ffffff
- 
+
+
 [hints]
 #font = Monospace 12
 #foreground = #dcdccc

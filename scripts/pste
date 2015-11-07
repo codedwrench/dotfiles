@@ -1,0 +1,15 @@
+#!/bin/bash
+input="${1}"
+key=yourkeyhere
+if [ "$#" -ne 1 ]; then
+	echo "I need an imagepath to work"
+	exit 1
+fi
+
+if [[ -f "$input" ]]; then
+	output="$(curl --silent -F "key=$key" -F "file=@$input" "https://u.pste.pw/api/upload" | grep -o -i "https://u.pste.pw/*.[a-z0-9._-]*")"
+	echo "Here is your image ;) " $output
+else
+	echo "File not found, are you sure you got it right?"
+	exit 1
+fi

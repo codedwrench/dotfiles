@@ -14,22 +14,28 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-CARD="${1:-0}"
-MIXER="${2:-pulse}" # use pulse for pulseaudio, default is alsa
-VOLUME="$(pulseaudio-ctl full-status | awk '{ print $1;}')"
+DIR="${1:-$HOME}"
+ALERT_LOW="${2:-10}" # color will turn red under this value (default: 10%)
 
-case $BLOCK_BUTTON in
-  1) pavucontrol ;; #left click, start mixer
-  3) pulseaudio-ctl mute ;; # right click, mute/unmute
-  4) pulseaudio-ctl up;;    # scroll up, increase
-  5) pulseaudio-ctl down ;;    # scroll down, decrease
-esac
+df -h -P -l "$DIR" 2>/dev/null |
+	awk -v alert_low=$ALERT_LOW '
+/\/.*/ {
+	# full text
+	print " " $4
 
-echo " $VOLUME%"
-echo
+	# short text
+	print " " $4
 
-MUTED="$(pulseaudio-ctl full-status | awk '{ print $2;}')"
-if [ "$MUTED" == "yes" ]; then
-	echo \#F7726E
-fi
+	use=$5
 
+	# no need to continue parsing
+	exit 0
+}
+END {
+	gsub(/%$/,"",use)
+	if (100 - use < alert_low) {
+		# color
+		print "#FF0000"
+	}
+}
+'

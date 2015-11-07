@@ -20,10 +20,10 @@ connection="$(/sbin/iwconfig $INTERFACE | awk -F '"' '/ESSID/ {print $2}')"
 echo " $connection"
 echo ""
 
-if [[ "$strength" > 50 ]]; then
-	echo  \#aced6b
+if [[ "$strength" -gt 50 ]]; then
+	echo  \#9FDA74
 
-elif [[ "$strength" > 30 ]]; then
+elif [[ "$strength" -gt 30 ]]; then
 	echo  \#edb76b
 
 else

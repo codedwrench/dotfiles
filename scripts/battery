@@ -19,12 +19,12 @@ ALERT_LOW="${2:-10}" # color will turn red under this value (default: 10%)
 UPOWER="/usr/bin/upower"
 
 if [ ! -x "$UPOWER" ]; then
-	echo "upower not found"
-	exit 1
+echo "upower not found"
+exit 1
 fi
 
 $UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
-	awk -v alert_low=$ALERT_LOW '
+awk -v alert_low=$ALERT_LOW '
 /state:/ {
 	state = $2
 }
@@ -35,8 +35,8 @@ $UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
 	remaining_time = $4 " " substr ($5, 0, 1)
 }
 /percentage:/ {
-	percentage = $2;
-}
+				 percentage = $2;
+			 }
 END {
 	if (state == "charging")
 		label = ""
