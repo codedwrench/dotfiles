@@ -6,7 +6,7 @@ require("awful.autofocus")
 require("volume")
 -- Widget and layout library
 local wibox = require("wibox")
-local net_widgets = require("net_widgets")
+local net_widgets = require("netwidgets")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
