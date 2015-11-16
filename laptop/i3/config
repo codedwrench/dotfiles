@@ -50,7 +50,7 @@ bindsym $mod+e exec pcmanfm
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec  dmenu_run -h 20 -b -w 1400 -x 80 -fn "Liberation Sans-9" -sf "#ffffff" -nf "#aaaaaa" -nb "#2E3030" -sb "#71807f"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -105,7 +105,7 @@ bindsym $mod+Tab focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1:
@@ -199,6 +199,7 @@ bar {
 
 # windows rules
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Galculator"] floating enable
 for_window [class="Skype"] move container to workspace 6:
 
 
@@ -208,4 +209,4 @@ exec --no-startup-id compton
 exec --no-startup-id nitrogen --restore 
 exec --no-startup-id firefox
 exec --no-startup-id i3-msg 'workspace 1:; exec --no-startup-id termite'
-exec --no-startup-id killall -USR1 i3blocks
+# exec --no-startup-id killall -USR1 i3blocks
