@@ -1,0 +1,23 @@
+#!/bin/bash
+
+kindofconnection="${1:-external}"
+internalip="yourinternaliphere"
+externalip="yourexternaliphere"
+port="yourporthere"
+path="yourpathhere"
+rasppath="raspberrypathhere"
+username="raspberriesusernamehere"
+
+if [ "$#" -ne 1 ]; then
+	echo "You forgot one of the arguments, usage: raspmount external/internal"
+	exit 1
+fi
+
+if [ $kindofconnection == 'internal' ]; then
+	sudo mount.cifs //$internalip$rasppath $path -o username=$username
+elif [ $kindofconnection == 'external' ]; then
+	sshfs -p $port $username@$externalip:$rasppath $path
+else
+	echo "Your argument didn't make any sense to me, usage: raspmount external/internal"
+fi
+
