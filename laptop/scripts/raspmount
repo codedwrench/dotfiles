@@ -1,20 +1,16 @@
 #!/bin/bash
 
-kindofconnection="${1:-external}"
-internalip="yourinternaliphere"
-externalip="yourexternaliphere"
-port="yourporthere"
-path="yourpathhere"
-rasppath="raspberrypathhere"
-username="raspberriesusernamehere"
-
-if [ "$#" -ne 1 ]; then
-	echo "You forgot one of the arguments, usage: raspmount external/internal"
-	exit 1
-fi
+kindofconnection="${1:-internal}"
+internalip="internal ip"
+externalip="external ip"
+port="port used for ssh"
+path="path to mount it to"
+rasppath="path sshfs should point to"
+share="sharename for samba"
+username="username of the raspberry"
 
 if [ $kindofconnection == 'internal' ]; then
-	sudo mount.cifs //$internalip$rasppath $path -o username=$username
+	sudo mount.cifs //$internalip/$share $path -o username=$username
 elif [ $kindofconnection == 'external' ]; then
 	sshfs -p $port $username@$externalip:$rasppath $path
 else
