@@ -12,7 +12,7 @@
      local fd = io.popen("pulseaudio-ctl full-status | awk '{ print $1;}'")
      local volume_str = fd:read("*all")
      fd:close()
-     if(type(volume_str) == "number") then
+     if(type(tonumber(volume_str)) == "number") then
      	return tonumber(volume_str) / 100
      else
 	return 0
