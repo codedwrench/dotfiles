@@ -9,14 +9,18 @@
  local vol_text = wibox.widget.textbox()
  -- Functions to fetch volume information (pulseaudio)
  function get_volume() -- returns the volume as a float (1.0 = 100%)
-     local fd = io.popen("pactl list | grep -A 9001 'Sink #1' | grep Volume | head -n 1 | awk -F / '{print $2}' | sed 's/[^0-9]*//g'")
+     local fd = io.popen("pulseaudio-ctl full-status | awk '{ print $1;}'")
      local volume_str = fd:read("*all")
      fd:close()
-     return tonumber(volume_str) / 100
+     if(type(volume_str) == "number") then
+     	return tonumber(volume_str) / 100
+     else
+	return 0
+     end
  end
  
  function get_mute() -- returns a true value if muted or a false value if not
-     fd = io.popen("pactl list | grep -A 9001 'Sink #1' | grep Mute | head -n 1")
+     fd = io.popen("pulseaudio-ctl full-status | awk '{ print $2;}'")
      local mute_str = fd:read("*all")
      fd:close()
      return string.find(mute_str, "yes")
@@ -46,17 +50,17 @@
  
  -- Volume control functions for external use
  function inc_volume(widget)
-     awful.util.spawn("pactl set-sink-volume 1 +5%", false)
+     awful.util.spawn("pulseaudio-ctl up", false)
      update_volume(widget)
  end
  
  function dec_volume(widget)
-     awful.util.spawn("pactl set-sink-volume 1 -5%", false)
+     awful.util.spawn("pulseaudio-ctl down", false)
      update_volume(widget)
  end
  
  function mute_volume(widget)
-     awful.util.spawn("pactl set-sink-mute 1 toggle", false)
+     awful.util.spawn("pulseaudio-ctl mute", false)
      update_volume(widget)
  end
  
