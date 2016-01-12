@@ -1,0 +1,7 @@
+scripts I use:
+
+iset.pl
+buffers.pl
+color_popup.pl
+sysinfo.pl
+urlgrab.py

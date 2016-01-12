@@ -1,0 +1,7 @@
+using:
+
+AutoComplPop
+delimitMate
+nerdtree
+syntastic 
+vim-polyglot

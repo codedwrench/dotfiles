@@ -55,7 +55,9 @@ bindsym $mod+space exec  dmenu_run -h 20 -b -w 1400 -x 80 -fn "Liberation Sans-9
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
+# make screenshot
+bindsym $mod+Print exec scrot $HOME/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+ctrl+Print exec scrot -s $HOME/`date +%Y-%m-%d_%H:%M:%S`.png
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -209,4 +211,6 @@ exec --no-startup-id compton
 exec --no-startup-id nitrogen --restore 
 exec --no-startup-id firefox
 exec --no-startup-id i3-msg 'workspace 1:; exec --no-startup-id termite'
+exec --no-startup-id setxkbmap -option compose:ralt 
+exec --no-startup-id pulseaudio --start
 # exec --no-startup-id killall -USR1 i3blocks

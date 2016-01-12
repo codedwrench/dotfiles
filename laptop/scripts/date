@@ -1,6 +1,6 @@
 #!/bin/sh
 case $BLOCK_BUTTON in
-  1) /home/codedwrench/.scripts/reminders &;; #left click, start dzen script
+  1) /home/codedwrench/.scripts/reminders ;; #left click, start dzen script
 esac
 
 DATE="$(date '+%a %d-%b %H:%M')"

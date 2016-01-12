@@ -11,5 +11,5 @@ FONT='xft:Hack:size=10'
 (
 
 # current month, highlight header and today
-echo -en "\n $OUTPUT" | dzen2 -bg $BG -x 1513 -y 1055 -w 400 -h 16 -l $LINES -sa c -p -e 'onstart=uncollapse,hide;button3=exit;' -fn $FONT -tw 0
+echo -en "\n $OUTPUT" | dzen2 -bg $BG -x 1513 -y 1055 -w 400 -h 16 -l $LINES -sa c -p -e 'onstart=uncollapse,hide;button3=exit;' -fn $FONT -tw 0 &
 )

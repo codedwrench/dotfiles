@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#small script to switch monitors, needs changing to work for someone else
 monitor="${1:-laptop}"
 fullcolor="${2:-n}"
 
