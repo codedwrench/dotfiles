@@ -1,6 +1,6 @@
-# Dotfiles November 2015
+# Dotfiles March 2016
 
-These are my dotfiles for my laptop and desktop on november 2015
+These are my dotfiles for my laptop and desktop on March 2016
 
 Laptop is on Airbladers I3-Gaps
 
