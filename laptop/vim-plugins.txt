@@ -5,3 +5,9 @@ delimitMate
 nerdtree
 syntastic 
 vim-polyglot
+neocomplete
+neoinclude
+targets.vim
+vim-airline
+vim-airline-themes
+vim-sensible

@@ -1,16 +1,16 @@
 #!/bin/bash
-#small script to mount a share through sshfs or samba depending if you're in or out of the local network
+
 kindofconnection="${1:-internal}"
-internalip="" 
-externalip="" 
-port="" #ssh port to use 
-path="" #path the share must be mounted on
-rasppath="" #path of the share
-share="" #the samba share
-username="" #the username to use 
+internalip="internalip"
+externalip="externalip"
+port="ssh port"
+path="path to mount to"
+rasppath="path on sshfs"
+share="samba share"
+username="username"
 
 if [ $kindofconnection == 'internal' ]; then
-	sudo mount.cifs //$internalip$share $path -o username=$username,iocharset=utf8
+	sudo mount.cifs //$internalip$share $path -o username=$username,iocharset=utf8,uid=1000
 elif [ $kindofconnection == 'external' ]; then
 	sshfs -p $port $username@$externalip:$rasppath $path
 else

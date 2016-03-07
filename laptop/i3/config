@@ -172,6 +172,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#window titlesbar colors, in tabbed/stacked mode 
+#colors		   			#border #bg     #text   #indicator
+client.focused 			#252626 #252626 #8CC7C7 #252626
+client.focused_inactive #252626 #252626 #7EB3B3 #252626
+client.unfocused        #2E3030 #2E3030 #cccccc #2E3030
+
+
 #Media keys
 bindsym XF86KbdBrightnessDown exec /home/codedwrench/.scripts/leds_down.sh
 bindsym XF86KbdBrightnessUp exec /home/codedwrench/.scripts/leds_up.sh
@@ -213,4 +220,5 @@ exec --no-startup-id firefox
 exec --no-startup-id i3-msg 'workspace 1:; exec --no-startup-id termite'
 exec --no-startup-id setxkbmap -option compose:ralt 
 exec --no-startup-id pulseaudio --start
-# exec --no-startup-id killall -USR1 i3blocks
+exec --no-startup-id xflux -l 52.314223 -g 5.975226 -k 3299
+#exec --no-startup-id killall -USR1 i3blocks

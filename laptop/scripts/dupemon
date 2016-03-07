@@ -1,3 +1,2 @@
 #!/bin/bash
-#this could'v been an alias as well, usage is self explanatory
 xrandr --output HDMI2 --auto --same-as eDP1

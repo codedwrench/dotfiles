@@ -21,3 +21,7 @@ fi
 source /etc/profile.d/bash-completion.sh
 export PEPPER_FLASH_VERSION=$(grep '"version":' /usr/lib/chromium-browser/PepperFlash/manifest.json| grep -Po '(?<=version": ")(?:\d|\.)*')
 export PATH=$PATH:/home/codedwrench/.scripts/
+
+export QSYS_ROOTDIR="/home/codedwrench/altera_lite/15.1/quartus/sopc_builder/bin"
+
+export ALTERAOCLSDKROOT="/home/codedwrench/altera_lite/15.1/hld"

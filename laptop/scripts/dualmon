@@ -1,5 +1,4 @@
 #!/bin/bash
-#very small script to extend my monitors, needs changing to work for someone else 
 xrandr --output eDP1 --auto
 xrandr --output HDMI2 --primary --right-of eDP1 --auto
 xrandr --output HDMI2 --set "Broadcast RGB" "Full"

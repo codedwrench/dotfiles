@@ -1,5 +1,6 @@
+
 #!/bin/sh
-#from http://crunchbang.org/forums/viewtopic.php?pid=126921%23p126921#p126921
+
 # ANSI Color -- use these variables to easily have different color
 #    and format output. Make sure to output the reset sequence after 
 #    colors (f = foreground, b = background), and use the 'off'

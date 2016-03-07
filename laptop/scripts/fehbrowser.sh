@@ -1,5 +1,5 @@
 #!/bin/bash
-#copy pasted from the arch linux wiki: https://wiki.archlinux.org/index.php/feh#File_Browser_Image_Launcher
+
 shopt -s nullglob
 
 if [[ ! -f $1 ]]; then

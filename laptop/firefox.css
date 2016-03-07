@@ -21,7 +21,7 @@
     /* Fonts */
     --font-family:  !important;        /* Default is 'sans-serif' */
     --font-weight:  !important;        /* Default is 'normal' */
-    --font-size:9pt !important;        /* Default is '14px' */
+    --font-size:10pt !important;        /* Default is '14px' */
  
     /* Tabs */
     --tab-size-height:0px !important;  /* This will be added to a minimal size.
@@ -45,7 +45,7 @@
     --url-fg: #D6CCDC !important;
     --url-bg: #252626 !important;
     --url-align:left !important;        /* The alignment of the text in the url. */
-    --url-size-height: 32px!important;  /* Be sure to change this as this will automatically handle
+    --url-size-height: 24px!important;  /* Be sure to change this as this will automatically handle
                                            the height issues you might have concerning the content. */
 
     --toolbarbutton-hover-background: none !important;
@@ -61,17 +61,13 @@
 #addonbar-closebutton,#appmenu-toolbar-button,#back-button,#bookmarks-menu-button,
 #downloads-button,#forward-button,#go-button,#home-button,#identity-box,
 #identity-icon-labels,#minimize-button,#notification-popup-box,#page-proxy-favicon,
-#PanelUI-button,#restore-button,#searchbar,#star-button,#stylish-toolbar-button,
+#restore-button,#searchbar,#star-button,#stylish-toolbar-button,
 #tabbrowser-tabs .scrollbutton-down,#tabbrowser-tabs .scrollbutton-up,
 #urlbar-container dropmarker,#urlbar-go-button,#urlbar-reload-button,
-#urlbar-stop-button,statusbarpanel
+#urlbar-stop-button,statusbarpanel, #reader-mode-button
 { display: none !important; }
 
 
-/* Ensure you the fixed positioning of the nav/urlbar doesn't
-   Sizen down the actual viewable content. */
-#content-deck
-{ margin-top: calc(var(--url-size-height)) !important; }
 
 /* Active pointers on the side of an active tab. */
 .tab-background-start,
@@ -95,7 +91,7 @@
 #TabsToolbar .tabbrowser-tabs {
     min-height: calc(0px + var(--tab-height)) !important;
     text-align: center !important;
-    margin: 0px -15px !important; }
+    margin: -1px -15px !important; }
 
 /* The min-max width of tabs. */
 #main-window #tabbrowser-tabs tab[fadein]:not([pinned])
@@ -122,14 +118,49 @@ tab
 #main-window .tabbrowser-tab:hover
 { background-color: var(--tab-bg-hover);  color: var(--tab-fg-hover);  }
 
+#PanelUI-button {
+ 
+    background-position: 100% 0, calc(100% - 1px) 0, calc(100% - 2px) 0;
+    background: url('http://i.imgur.com/TkuW5hs.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    box-shadow: none !important;
+    width: 10px !important;
+    margin-top: 5px !important;
+    /*display: none !important; /*COMMENT THIS LINE FOR A MENU BUTTON*/
+  }
+#PanelUI-button:hover {
+ 
+    background-position: 100% 0, calc(100% - 1px) 0, calc(100% - 2px) 0;
+    background: url('http://i.imgur.com/h8J7fda.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    box-shadow: none !important;
+    width: 10px !important;
+  }
+ 
+#PanelUI-button .button-icon,
+#PanelUI-button .button-text {
+    display: none !important;
+}
+#umatrix-button {
+    list-style-image: none !important;
+}
+#PanelUI-menu-button {
+    opacity: 0 !important;
+    width: 10px !important;
+    margin-right: -15px !important;
+}
+ 
+
 /* Tab:Active */
 #main-window .tabbrowser-tab[selected]
 { background-color: var(--tab-bg-active); color: var(--tab-fg-active); }
 
 /* The actual bar, this doesn't talk to the text within. */
 #nav-bar
-{ background: var(--url-bg) !important; height: var(--url-size-height) !important;
-  box-shadow: none !important; position: fixed !important; width: 100% !important; }
+{ background: var(--url-bg) !important; height: 30px !important;
+  box-shadow: none !important; position: relative !important; width: 100% !important; }
 
 /* The text within the url bar. */
 #urlbar
@@ -138,8 +169,14 @@ tab
   font-size: var(--font-size) !important;
   text-align: var(--url-align);
   color: var(--url-fg);
-  margin: -2px 0px 0px 13px !important; width: 100vw !important;
+  margin: 4px 0px 4px 16px !important; width: 100vw !important;
   background: none !important;border: none !important; }
+
+toolbarbutton
+{
+  margin: -3px 0px -3px 0px !important; 
+  padding: 1px 1px 1px 1px !important;
+}
 
 .ac-type-icon
   {
@@ -156,7 +193,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 { margin-top: 8px !important; }
 #PopupAutoCompleteRichResult richlistitem,
 #PopupAutoCompleteRichResult richlistitem *
-{ font-size: var(--font-size);background: var(--url-bg);color: var(--url-fg);
+{ -size: var(--font-size);background: var(--url-bg);color: var(--url-fg);
   border: none !important;height: 20px !important;
   margin: 0px 0px 0px 0px!important; padding:1px 0px 1px 2px!important;}
 
