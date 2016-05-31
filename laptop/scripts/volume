@@ -14,22 +14,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-CARD="${1:-0}"
-MIXER="${2:-pulse}" # use pulse for pulseaudio, default is alsa
-VOLUME="$(pulseaudio-ctl full-status | awk '{ print $1;}')"
-
 case $BLOCK_BUTTON in
   1) pavucontrol ;; #left click, start mixer
-  3) pulseaudio-ctl mute ;; # right click, mute/unmute
-  4) pulseaudio-ctl up;;    # scroll up, increase
-  5) pulseaudio-ctl down ;;    # scroll down, decrease
+  3) ponymix toggle > /dev/null ;; # right click, mute/unmute
+  4) ponymix increase 10 > /dev/null ;;    # scroll up, increase
+  5) ponymix decrease 10 > /dev/null ;;    # scroll down, decrease
 esac
 
-echo " $VOLUME%"
+VOLUME=" $(ponymix get-volume)%"
+MUTED=$(ponymix list | grep -A 2 "sink 1" | grep "Muted")
+echo "$VOLUME"
 echo
 
-MUTED="$(pulseaudio-ctl full-status | awk '{ print $2;}')"
-if [ "$MUTED" == "yes" ]; then
+if [ "${MUTED}" ]; then
 	echo \#F7726E
 fi
 

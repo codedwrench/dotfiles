@@ -7,6 +7,6 @@
 [[ $(tty) = "/dev/tty1" ]] && exec startx
 
 
-export QSYS_ROOTDIR="/home/codedwrench/altera_lite/15.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/mnt/ssddata/altera_lite/15.1/quartus/sopc_builder/bin"
 
-export ALTERAOCLSDKROOT="/home/codedwrench/altera_lite/15.1/hld"
+export ALTERAOCLSDKROOT="/mnt/ssddata/altera_lite/15.1/hld"

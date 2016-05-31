@@ -18,10 +18,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Put your fun stuff here.
-source /etc/profile.d/bash-completion.sh
-export PEPPER_FLASH_VERSION=$(grep '"version":' /usr/lib/chromium-browser/PepperFlash/manifest.json| grep -Po '(?<=version": ")(?:\d|\.)*')
-export PATH=$PATH:/home/codedwrench/.scripts/
+export PATH=$PATH:/home/codedwrench/.scripts/:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3
 
-export QSYS_ROOTDIR="/home/codedwrench/altera_lite/15.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/mnt/ssddata/altera_lite/15.1/quartus/sopc_builder/bin"
 
-export ALTERAOCLSDKROOT="/home/codedwrench/altera_lite/15.1/hld"
+export ALTERAOCLSDKROOT="/mnt/ssddata/altera_lite/15.1/hld"
