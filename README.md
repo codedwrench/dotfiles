@@ -1,8 +1,8 @@
-# Dotfiles March 2016
+# Dotfiles May 2016
 
-These are my dotfiles for my laptop and desktop on March 2016
+These are my dotfiles for my laptop and desktop on May 2016
 
-Laptop is on Airbladers I3-Gaps
+Laptop is on ~~Airbladers I3-Gaps~~ Awesome WM with useless gaps from copycat-killers lain
 
 Desktop is AwesomeWM with useless gaps from copycat-killers lain
 
