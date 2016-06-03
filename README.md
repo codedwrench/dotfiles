@@ -9,4 +9,4 @@ Desktop is AwesomeWM with useless gaps from copycat-killers lain
 
 
 Screenshots: 
-http://imgur.com/a/Wx9XG [Laptop], http://imgur.com/a/SaqXq [Desktop]
+http://imgur.com/a/Wx9XG [i3] http://imgur.com/a/jqOml [awesome] [Laptop], http://imgur.com/a/SaqXq [Desktop]
