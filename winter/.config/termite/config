@@ -1,0 +1,81 @@
+[options]
+resize_grip = false
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = true
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Hack 9
+scrollback_lines = 10000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+  
+# "system", "on" or "off"
+cursor_blink = off
+   
+    
+# $BROWSER is used by default
+browser = x-www-browser
+     
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+ 
+[colors]
+foreground = #cccccc
+foreground_bold = #cccccc
+#foreground_dim = #888888
+background = #0B0629
+cursor = #999999
+ 
+# if unset, will reverse foreground and background
+#highlight = #2f2f2f
+# black
+color0  = #1C1515
+color8  = #807366
+
+# red
+color1  = #70384b
+color9  = #9a7386
+
+# green
+color2  = #aabb99
+color10 = #ddddbb
+
+# yellow
+color3  = #bb5544
+color11 = #dd9955
+
+# blue
+color4  = #668899
+color12 = #99aabb
+
+# magenta
+color5  = #555577
+color13 = #9988aa
+
+# cyan
+color6  = #aaccbb
+color14 = #cceeee
+
+# white
+color7  = #8e959d
+color15 = #b3bcc6
+
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+ 
+# vim: ft=dosini

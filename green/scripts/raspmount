@@ -1,12 +1,12 @@
 #!/bin/bash
 
 kindofconnection="${1:-internal}"
-internalip="internalip"
-externalip="externalip"
-port="ssh port"
-path="path to mount to"
-rasppath="path on sshfs"
-share="samba share"
+internalip="intip"
+externalip="extip"
+port="port"
+path="path"
+rasppath="rasppath"
+share="share"
 username="username"
 
 if [ $kindofconnection == 'internal' ]; then

@@ -1,0 +1,4 @@
+#!/bin/bash
+xrandr --output LVDS --auto
+xrandr --output VGA-0 --primary --right-of LVDS --auto
+xrandr --output VGA-0 --set "Broadcast RGB" "Full"

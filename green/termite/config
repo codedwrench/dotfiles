@@ -21,7 +21,7 @@ cursor_blink = off
    
     
 # $BROWSER is used by default
-browser = firefox
+browser = x-www-browser
      
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)

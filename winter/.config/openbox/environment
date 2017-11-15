@@ -1,0 +1,4 @@
+# Set up environmental variables for Openbox
+
+# Set up applications menu for pcmanfm
+export XDG_MENU_PREFIX="lxde-"

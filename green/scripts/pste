@@ -1,6 +1,6 @@
 #!/bin/bash
 input="${1}"
-key=apikeyhere
+key="insert key here"
 if [ "$#" -ne 1 ]; then
 	echo "I need an imagepath to work"
 	exit 1

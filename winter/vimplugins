@@ -1,0 +1,15 @@
+delimitMate
+neoinclude
+targets
+vim-airline-themes
+vim-hardy
+latexSuite
+nerdtree
+vim-flake8
+vim-polyglot
+neocomplete
+syntastic
+vim-airline
+vim-fugitivex
+vim-sensible
+

@@ -4,11 +4,11 @@ monitor="${1:-laptop}"
 fullcolor="${2:-n}"
 
 if [ $monitor == 'laptop' ]; then
-	xrandr --output HDMI2 --off
-	xrandr --output eDP1 --auto
+	xrandr --output VGA-0 --off
+	xrandr --output LVDS --auto
 else
-	xrandr --output eDP1 --off
-	xrandr --output HDMI2 --auto
+	xrandr --output LVDS --off
+	xrandr --output VGA-0 --auto
 	if [ $fullcolor == 'y' ]; then
 		xrandr --output HDMI2 --set "Broadcast RGB" "Full"
 	fi
